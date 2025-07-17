@@ -1,0 +1,8 @@
+column_name,data_type,constraints,default_value,description
+id,uuid,primary key,uuid_generate_v4(),Unique identifier for each task
+user_id,uuid,references auth.users not null,,Foreign key to the authenticated user
+title,text,not null,,Task title (required)
+description,text,,,Optional task description
+status,text,check (status in ('pending' 'in-progress' 'done')) not null,pending,Task status with enum validation
+extras,jsonb,,,JSON field for additional data (tags due_date priority)
+inserted_at,timestamp with time zone,,timezone('utc'::text now()),Creation timestamp in UTC
