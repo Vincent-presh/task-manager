@@ -50,7 +50,7 @@ export default function Auth() {
         className="max-w-md w-full space-y-8 relative z-10"
       >
         {/* Glass Container */}
-        <div className="rounded-3xl p-8 shadow-2xl border border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95">
+        <div className="glass rounded-3xl p-8 shadow-2xl border border-white/20">
           <motion.div
             initial={{opacity: 0, y: -20}}
             animate={{opacity: 1, y: 0}}
@@ -72,10 +72,10 @@ export default function Auth() {
                 />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-2">
+            <h2 className="text-3xl font-bold text-white mb-2">
               {isSignUp ? "Join TaskFlow" : "Welcome back"}
             </h2>
-            <p className="text-zinc-700 dark:text-zinc-300 text-sm">
+            <p className="text-white/70 text-sm">
               {isSignUp
                 ? "Create your account to get started"
                 : "Sign in to continue to your tasks"}
@@ -93,7 +93,7 @@ export default function Auth() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-2"
+                  className="block text-sm font-medium text-white/80 mb-2"
                 >
                   Email address
                 </label>
@@ -103,7 +103,7 @@ export default function Auth() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -112,7 +112,7 @@ export default function Auth() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-2"
+                  className="block text-sm font-medium text-white/80 mb-2"
                 >
                   Password
                 </label>
@@ -123,7 +123,7 @@ export default function Auth() {
                     type={showPassword ? "text" : "password"}
                     autoComplete="current-password"
                     required
-                    className="w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-xl text-zinc-900 dark:text-white placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300 pr-12"
+                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm pr-12"
                     placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -134,7 +134,7 @@ export default function Auth() {
                       showPassword ? "Hide password" : "Show password"
                     }
                     onClick={() => setShowPassword((v) => !v)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white focus:outline-none"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white focus:outline-none"
                     tabIndex={0}
                   >
                     {showPassword ? (
@@ -183,7 +183,7 @@ export default function Auth() {
               <motion.div
                 initial={{opacity: 0, y: -10}}
                 animate={{opacity: 1, y: 0}}
-                className="bg-red-600 border border-red-700 text-white px-4 py-3 rounded-xl text-sm shadow-lg"
+                className="bg-red-500/20 border border-red-500/30 text-red-200 px-4 py-3 rounded-xl text-sm backdrop-blur-sm"
               >
                 {error}
               </motion.div>
@@ -223,7 +223,7 @@ export default function Auth() {
             <motion.button
               type="submit"
               disabled={loading}
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-xl font-medium text-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transform transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full btn-primary text-white py-3 px-6 rounded-xl font-medium text-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transform transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent"
               whileHover={{scale: 1.02}}
               whileTap={{scale: 0.98}}
             >
@@ -261,7 +261,7 @@ export default function Auth() {
               <button
                 type="button"
                 onClick={() => setIsSignUp(!isSignUp)}
-                className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors duration-200 text-sm underline decoration-dotted underline-offset-4"
+                className="text-white/70 hover:text-white transition-colors duration-200 text-sm underline decoration-dotted underline-offset-4"
               >
                 {isSignUp
                   ? "Already have an account? Sign in"
@@ -276,7 +276,7 @@ export default function Auth() {
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{delay: 0.6, duration: 0.8}}
-          className="text-center text-zinc-500 dark:text-zinc-400 text-xs"
+          className="text-center text-white/60 text-xs"
         >
           <p>Secure authentication powered by Supabase</p>
         </motion.div>

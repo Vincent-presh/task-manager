@@ -2,6 +2,10 @@
 
 A full-stack user task manager built with React, Supabase, and Edge Functions. Users can manage their tasks and run an Edge Function to get insights about their current task statuses.
 
+# VERCEL LINK
+
+https://task-manager-blush-sigma.vercel.app
+
 ## Features
 
 - **Authentication**: Sign up and login with Supabase Auth. Only show tasks for the logged-in user.
@@ -69,6 +73,7 @@ create table tasks (
 ## Advanced Features (Implemented)
 
 ### ✅ **Completed Features:**
+
 - **Notifications/Reminders**: Browser notifications for due and overdue tasks
 - **Task Comments**: Full commenting system with real-time updates
 - **Task Attachments**: File upload/download with Supabase Storage
@@ -77,23 +82,28 @@ create table tasks (
 - **Security & Performance**: Comprehensive security hardening and optimization
 
 ### 📊 **Analytics Edge Function**
+
 The analytics system includes an Edge Function that calculates:
+
 - Task completion rates and productivity scores
 - Priority distribution and trend analysis
 - Upcoming deadlines and overdue task tracking
 - Monthly productivity trends
 
 **Note**: In this demo, the analytics are manually triggered for testing purposes. In production, this would be automatically triggered by:
+
 - Supabase database triggers on task updates
 - Scheduled functions (cron jobs)
 - Real-time subscriptions to database changes
 
 ### 📱 **Mobile Navigation**
+
 - Hamburger menu appears on mobile devices
 - Sliding sidebar with user stats and navigation
 - Touch-optimized interface with responsive layouts
 
 ### 🔒 **Security & Performance Features**
+
 - **Input Sanitization**: XSS protection with DOMPurify and validation
 - **File Upload Security**: MIME type validation, dangerous file blocking, size limits
 - **Rate Limiting**: Protection against API abuse and brute force attacks
@@ -114,43 +124,51 @@ The analytics system includes an Edge Function that calculates:
 This application implements enterprise-grade security features:
 
 #### **Input Validation & Sanitization**
+
 - XSS protection using DOMPurify for HTML content
 - Input validation for task titles, descriptions, and tags
 - Filename sanitization for uploaded files
 - UUID validation for all database operations
 
 #### **File Upload Security**
+
 - MIME type validation and allowlist enforcement
 - Dangerous file extension blocking (executables, scripts)
 - File size limits (10MB maximum)
 - Secure file handling with sanitized names
 
 #### **Rate Limiting**
+
 - Authentication operations: 5 requests per minute
 - Edge function analytics: 10 requests per minute
 - Client-side rate limiting for user actions
 
 #### **Error Handling**
+
 - React Error Boundaries prevent application crashes
 - Sanitized error logging (no sensitive data exposure)
 - Graceful fallbacks for failed operations
 
 #### **Session Security**
+
 - Automatic token refresh 5 minutes before expiry
 - Session expiry tracking and warnings
 - Secure sign-out with cleanup
 
 #### **Content Security Policy**
+
 - Script injection prevention in production
 - Restricted resource loading policies
 - CSP headers dynamically generated
 
 #### **Environment & Infrastructure**
+
 - Environment variable validation on startup
 - Secure database policies with Row Level Security
 - Parameterized queries to prevent SQL injection
 
 #### **Performance Optimizations**
+
 - **Database Indexes**: Strategic indexes on JSONB fields (due_date, priority, tags)
 - **N+1 Query Prevention**: Analytics use SQL aggregation instead of client processing
 - **Virtual Scrolling**: React-window for efficient large list rendering
